@@ -1,4 +1,4 @@
-Write a Bash script that sets up your web servers for the deployment of web_static. It must:
+0. Write a Bash script that sets up your web servers for the deployment of web_static. It must:
 
 Install Nginx if it not already installed
 Create the folder /data/ if it doesn’t already exist
@@ -13,4 +13,10 @@ Update the Nginx configuration to serve the content of /data/web_static/current/
 Use alias inside your Nginx configuration
 Tip
 Your program should always exit successfully. Don’t forget to run your script on both of your web servers.
+1. Write a Fabric script that generates a .tgz archive from the contents of the web_static folder of your AirBnB Clone repo, using the function do_pack.
 
+Prototype: def do_pack():
+All files in the folder web_static must be added to the final archive
+All archives must be stored in the folder versions (your function should create this folder if it doesn’t exist)
+The name of the archive created must be web_static_<year><month><day><hour><minute><second>.tgz
+The function do_pack must return the archive path if the archive has been correctly generated. Otherwise, it should return None
